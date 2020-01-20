@@ -1,0 +1,142 @@
+@import "mixins";
+@import "variables";
+
+.dat-button {
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  max-width: 140px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  @include box-shadow(0px 4px 10px rgba(37, 53, 76, 0.2));
+  margin: 10px;
+
+  &:hover,
+  &:focus {
+    @include box-shadow(0px 2px 5px rgba(37, 53, 76, 0.2));
+  }
+
+  &.dat-button-small {
+    min-width: 100px;
+    max-width: inherit;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+  }
+
+  &.dat-button-large {
+    min-width: 180px;
+    max-width: inherit;
+    width: auto;
+    border-radius: 50px;
+  }
+
+  &.dat-icon {
+    .mat-icon {
+      font-size: 18px;
+      line-height: 18px;
+      width: 18px;
+      height: 18px;
+    }
+
+    &.dat-icon-left {
+      .mat-icon {
+        margin-right: 5px;
+      }
+    }
+
+    &.dat-icon-right {
+      .mat-icon {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &.bg-dark-blue {
+    @include box-shadow(0px 10px 20px rgba(94, 115, 234, 0.5));
+
+    &:hover,
+    &:focus {
+      @include box-shadow(0px 4px 10px rgba(94, 115, 234, 0.5));
+    }
+  }
+
+  &.bg-dark-green {
+    @include box-shadow(0px 10px 20px rgba(0, 163, 143, 0.5));
+
+    &:hover,
+    &:focus {
+      @include box-shadow(0px 4px 10px rgba(0, 163, 143, 0.5));
+    }
+  }
+}
+
+.dat-icon-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px;
+  border: none;
+  @include box-shadow(0px 4px 10px rgba(37, 53, 76, 0.2));
+
+  @media screen and (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:hover,
+  &:focus {
+    @include box-shadow(0px 2px 5px rgba(37, 53, 76, 0.2));
+  }
+
+  .mat-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.bg-dark-blue {
+    @include box-shadow(0px 10px 20px rgba(94, 115, 234, 0.5));
+
+    &:hover,
+    &:focus {
+      @include box-shadow(0px 4px 10px rgba(94, 115, 234, 0.5));
+    }
+  }
+
+  &.bg-dark-green {
+    @include box-shadow(0px 10px 20px rgba(0, 163, 143, 0.5));
+
+    &:hover,
+    &:focus {
+      @include box-shadow(0px 4px 10px rgba(0, 163, 143, 0.5));
+    }
+  }
+
+  &.dat-icon-small {
+    width: 40px;
+    height: 40px;
+
+    .mat-icon {
+      font-size: 22px;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &.bg-red {
+    background: $red !important;
+  }
+}

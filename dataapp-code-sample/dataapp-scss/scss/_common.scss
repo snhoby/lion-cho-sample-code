@@ -1,0 +1,357 @@
+@import "mixins";
+
+body {
+  background: $bg-body;
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  letter-spacing: .5px
+}
+
+* {
+  box-sizing: border-box;
+
+  &.disabled,
+  &:disabled,
+  &[disabled='disabled'],
+  &[disabled='true'] {
+    // opacity: .5;
+    cursor: not-allowed !important;
+  }
+
+  &:hover,
+  &:focus {
+    @include transition(all 0.2s ease-in-out);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 40px
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 36px
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 32px
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 20px
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 16px
+}
+
+a {
+  color: $secondary;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition(all .2s ease-in-out);
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+    @include transition(all .2s ease-in-out);
+  }
+}
+
+button {
+  @include transition(all .2s ease-in-out);
+  font-family: 'Lato', sans-serif;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    @include transition(all .2s ease-in-out);
+  }
+}
+
+input {
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $bg-body inset !important;
+    box-shadow: 0 0 0 30px $bg-body inset !important;
+  }
+}
+
+
+.bg-gray {
+  background: $gray;
+}
+
+.color-gray {
+  color: $gray;
+}
+
+.bg-white {
+  background: $white;
+}
+
+.color-white {
+  color: $white;
+}
+
+.color-primary {
+  color: $primary;
+}
+
+.bg-primary {
+  background: $primary;
+}
+
+.bg-green {
+  background: $green;
+}
+
+.color-green {
+  color: $green
+}
+
+.color-dark-gray {
+  color: $text-gray;
+}
+
+.bg-dark-gray {
+  background: $text-gray;
+}
+
+.color-neutral {
+  color: $neutral;
+}
+
+.bg-neutral {
+  background: $neutral;
+}
+
+.bg-secondary {
+  background: $secondary;
+}
+
+.color-secondary {
+  color: $secondary;
+}
+
+.color-red {
+  color: $red;
+}
+
+.bg-red {
+  background: $red;
+}
+
+.color-dark-blue {
+  color: $dark-blue;
+}
+
+.bg-dark-blue {
+  background: $dark-blue;
+}
+
+.color-dark-green {
+  color: $dark-green;
+}
+
+.bg-dark-green {
+  background: $dark-green;
+}
+
+.color-warning {
+  color: #FFC107;
+}
+
+.bg-warning {
+  background: #FFC107;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.page-content {
+  margin-top: 80px;
+  position: relative;
+
+  .dat-loading-bar {
+    position: absolute;
+    top: 0px;
+  }
+}
+
+.dat-map-wrapper {
+  @include box-shadow(0px 4px 10px rgba(37, 53, 76, 0.06));
+  border: 10px solid #FDFDFD;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.offer-neutral {
+  .bg-dark {
+    background: darken($neutral, 5%);
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  .bg-light {
+    background: $neutral;
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  &.offer-details {
+    border-color: $neutral;
+  }
+
+  .offer-status-message {
+    color: $neutral !important;
+    font-size: 13px;
+  }
+}
+
+.offer-accepted {
+  .bg-dark {
+    background: darken($green, 5%);
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  .bg-light {
+    background: $green;
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  &.offer-details {
+    border-color: $green;
+  }
+
+  .offer-status-message {
+    color: $green !important;
+    font-size: 13px;
+  }
+}
+
+.offer-rejected {
+  .bg-dark {
+    background: darken($red, 5%);
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  .bg-light {
+    background: $red;
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  &.offer-details {
+    border-color: $red;
+  }
+
+  .offer-status-message {
+    color: $red !important;
+    font-size: 13px;
+  }
+}
+
+.offer-completed {
+  .bg-dark {
+    background: darken($secondary, 5%);
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  .bg-light {
+    background: $secondary;
+
+    * {
+      color: $white !important;
+    }
+  }
+
+  &.offer-details {
+    border-color: $secondary;
+  }
+
+  .offer-status-message {
+    color: $secondary !important;
+    font-size: 13px;
+  }
+}
+
+.dat-dialog-wrapper {
+  .dat-image-cropper-wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+
+    .cropper {
+      &:after {
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, .5) !important;
+      }
+    }
+  }
+
+  .image-dialog-button-wrapper {
+    margin-bottom: 0px !important;
+  }
+}

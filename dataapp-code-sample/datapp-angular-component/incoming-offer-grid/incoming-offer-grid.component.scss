@@ -1,0 +1,92 @@
+@import "../../../../assets/scss/variables";
+@import "../../../../assets/scss/common";
+@import "../../../../assets/scss/utility";
+@import "../../../../assets/scss/card";
+@import "../../../../assets/scss/components";
+@import "../../../../assets/scss/mixins";
+
+.app-offer-card {
+  width: 100%;
+  margin: 15px 10px;
+  cursor: pointer;
+
+  @media screen and (max-width: 1280px) {
+    margin: 10px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    margin: 15px;
+  }
+
+  @media screen and (max-width: 959px) {
+    margin: 15px 0px;
+  }
+
+  .dat-card {
+    margin: 0px auto;
+  }
+}
+
+.dat-offer-card-wrapper {
+  border-radius: 6px;
+  max-width: 580px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .dat-card,
+  .dat-card-header,
+  .dat-card-footer {
+    border-radius: 0px !important;
+  }
+}
+
+.dat-card {
+  .dat-card-header {
+    padding: 0;
+    min-height: 50px;
+
+    .dat-card-header-column {
+      padding: 10px 15px;
+    }
+  }
+
+  .dat-card-content {
+    margin-bottom: 0px;
+
+    .dat-card-content-column {
+      padding: 10px 15px;
+      min-height: 80px;
+
+      .person-img {
+        width: 60px;
+        height: 60px;
+
+      }
+    }
+  }
+
+  .dat-card-footer {
+    margin: 0px;
+    padding: 0px;
+
+    .dat-card-footer-column {
+      padding: 0px 15px;
+      min-height: 40px;
+    }
+
+  }
+}
+
+.user-img-wrap {
+  width: 60px;
+  height: 60px;
+}
+
+.currency-message {
+  font-size: 13px;
+
+  p {
+    margin: 0px;
+  }
+}

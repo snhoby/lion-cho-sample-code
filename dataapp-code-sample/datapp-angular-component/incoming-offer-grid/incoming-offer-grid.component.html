@@ -1,0 +1,72 @@
+<div class="app-offer-card" fxFlex="1 1 580px" fxFlex.xs="1 1 auto" fxFlex.sm="1 1 auto" *ngFor="let offer of offers"
+    (click)="redirectToOfferDetail(offer)" class="app-offer-card">
+    <div class="dat-card dat-action-card dat-offer-card-wrapper" [ngClass]="utilSvc.getIncomingOfferStatus(offer).cssClass" fxLayout="row"
+        fxLayout.xs="column">
+        <div fxFlex="1 1 210px" fxFlex.xs="1 1 auto">
+            <mat-card class="dat-card dat-card-listing dat-offer-quote-card">
+                <mat-card-header class="dat-card-header bg-dark" fxLayoutAlign="flex-start center">
+                    <div class="dat-card-header-column w-100 currency-message">
+                        <p><span>{{offer.buyerName}}</span> want to buy</p>
+                    </div>
+                </mat-card-header>
+                <mat-card-content fxLayout="row" fxLayoutAlign="center center" class="dat-card-content bg-light">
+                    <div fxFlex="1 1 100%" fxLayoutAlign="flex-start center" class="dat-card-content-column w-100">
+                        <div class="currency-conversion">
+                            <app-currency-quantity [currency]="offer.qc" [amount]="offer.qcAmount" [icon]="true">
+                            </app-currency-quantity>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-footer fxLayout="row" fxLayoutAlign="center center" class="dat-card-footer bg-dark">
+                    <div fxLayoutAlign="flex-start center" class="dat-card-footer-column w-100">
+                        <app-currency-rate [currencyPair]="utilSvc.getOfferCurrencyPair(offer)" [rate]="offer.rate">
+                        </app-currency-rate>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div fxFlex="1 1 370px" fxFlex.xs="1 1 auto" fxHide.xs>
+            <mat-card class="dat-card dat-card-listing dat-offer-buy-card">
+                <mat-card-header class="dat-card-header bg-gray">
+                    <div class="dat-card-header-column w-100">
+                        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+                            <div fxFlex="1 1 100%" fxFlex.xs="1 1 auto" class="currency-message w-100"
+                                fxLayoutAlign="flex-start center">
+                                <p class="color-dark-gray"><span>{{offer.buyerName}}</span> will be paying</p>
+                            </div>
+                            <div fxFlex="1 1 100%" fxFlex.xs="1 1 auto" fxLayoutAlign="flex-end center"
+                                class="date-distance-detail text-right w-100">
+                                <app-offer-additional-info [offer]="offer" [view]="_dataView.card"
+                                    [offerType]="_offerType.incoming"></app-offer-additional-info>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-header>
+                <mat-card-content fxLayout="row" fxLayout.xs="column" fxlayput.xs="column" fxLayoutAlign="center center"
+                    class="dat-card-content bg-white">
+                    <div class="dat-card-content-column w-100" fxLayoutAlign="flex-start center">
+                        <div fxFlex="1 1 100%" class="dat-card-content-column-left">
+                            <div class="currency-conversion">
+                                <app-currency-quantity [currency]="offer.bc" [amount]="offer.bcAmount" [icon]="true">
+                                </app-currency-quantity>
+                            </div>
+                        </div>
+                        <div fxFlex="1 1 100%" fxLayoutAlign="flex-end center" class="dat-card-content-column-right">
+                            <div class="user-img-wrap">
+                                <app-offer-user-avatar [offer]="offer"></app-offer-user-avatar>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-footer fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center"
+                    class="dat-card-footer bg-gray">
+                    <div class="dat-card-footer-column w-100">
+                        <div fxFlex="1 1 100%" fxLayoutAlign="flex-start center">
+                            <p class="offer-status-message">{{utilSvc.getIncomingOfferStatus(offer).msg}}</p>
+                        </div>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

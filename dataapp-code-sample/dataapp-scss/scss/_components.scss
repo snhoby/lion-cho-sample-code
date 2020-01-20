@@ -1,0 +1,97 @@
+app-location-selector {
+  display: inline-block;
+  @media screen and (max-width: 960px) {
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-left: 5px;
+    width: 100%;
+  }
+}
+
+.dat-card-header-column-currency-converter {
+  .currency {
+    h4 {
+      margin: 0px 10px;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.date-distance-detail {
+  color: $text-gray;
+  font-size: 13px;
+}
+
+.currency-conversion {
+  word-break: break-all;
+
+  h5 {
+    color: $text-gray;
+  }
+
+  h1,
+  h5 {
+    margin: 0px;
+  }
+}
+
+.user-img-wrap {
+  background: $bg-body;
+  border: 2px solid $green;
+  border-radius: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 38px;
+  overflow: hidden;
+
+  .user-initials {
+    font-size: 20px;
+    color: $primary;
+  }
+
+  .user-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.person-img {
+  background: $bg-body;
+  border: 2px solid $green;
+  border-radius: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+
+  img {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
+}
+
+.margin-percentile {
+  max-width: 50px !important;
+}
+
+.person-info {
+  max-width: 70px !important;
+}
+
+.message-info {
+  max-width: 50px !important;
+}
+
+app-currency-rate,
+app-currency-rate-difference {
+  display: inline-block;
+}
+
+app-currency-rate+app-currency-rate-difference {
+  margin-left: 10px;
+}

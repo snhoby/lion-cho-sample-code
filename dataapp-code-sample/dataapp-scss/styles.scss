@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,700";
+@import "https://fonts.googleapis.com/css?family=Lato:400,700&display=swap";
+@import "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap";
+@import "assets/scss/variables";
+@import "assets/scss/common";
+@import "assets/scss/utility";
+@import "assets/scss/buttons";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', "Helvetica Neue", sans-serif;
+}
+
+.mat-dialog-container {
+  min-width: 370px;
+  position: relative;
+  max-height: 80vh !important;
+
+  .dat-loading-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 450px) {
+    min-width: auto;
+  }
+
+  .mat-dialog-content {
+    margin-bottom: 24px;
+    max-height: 40vh;
+
+    ::ng-deep {
+      .dat-button {
+        border-radius: 50px !important;
+      }
+    }
+
+  }
+
+  h3 {
+    margin-top: 0px;
+  }
+
+  .dialog-close {
+    border-radius: 100%;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  .mat-step-header {
+    display: none;
+  }
+
+  .mat-stepper-horizontal-line {
+    border-top: none;
+  }
+}
+
+.mat-simple-snackbar {
+  color: $white;
+
+  .mat-simple-snackbar-action {
+    color: $white;
+  }
+}
+
+.sub-nav-menu {
+  margin: 0;
+
+  .mat-menu-content {
+    padding: 0px !important;
+  }
+
+  .sub-nav-item {
+    box-shadow: 0px 1px 0px #F6F6F6;
+    color: rgba(17, 17, 17, 0.5);
+
+    &.logout-item {
+      color: rgba(17, 17, 17, 0.3);
+
+      .mat-icon {
+        color: rgba(17, 17, 17, 0.3);
+      }
+    }
+
+    .mat-icon {
+      font-size: 18px;
+    }
+  }
+
+  &.sub-nav-grid-menu {
+    .sub-nav-item {
+      .mat-icon {
+        background: #F0F0F0;
+        color: #111111;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 32px;
+        border-radius: 50%;
+        opacity: 0.4;
+        @include transition(all .2s ease-in-out);
+      }
+
+      &:hover,
+      &:focus {
+        .mat-icon {
+          opacity: 1;
+          background: #b7b7b7;
+          color: $white;
+          @include transition(all .2s ease-in-out);
+        }
+      }
+
+      &.active {
+        .mat-icon {
+          opacity: 1;
+          background: #111111;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.dat-loading-bar {
+  .mat-progress-bar-buffer {
+    background-color: lighten($dark-green, 10%) !important;
+  }
+
+  .mat-progress-bar-fill:after {
+    background-color: $dark-green !important;
+  }
+}

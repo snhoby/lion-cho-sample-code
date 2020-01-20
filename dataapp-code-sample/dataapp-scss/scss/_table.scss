@@ -1,0 +1,19 @@
+.dat-app-table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.dat-action-table {
+  tbody {
+    tr {
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background: $gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import "mixins";
+
+.dat-card {
+  border-radius: 6px;
+  padding: 0px;
+  @include box-shadow(0 4px 10px rgba(37, 53, 76, 0.06));
+
+  .dat-card-header {
+    border-top-right-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    ::ng-deep {
+      .mat-card-header-text {
+        margin: 0px;
+      }
+    }
+  }
+
+  .dat-card-footer {
+    border-bottom-right-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    h2,
+    h5,
+    p {
+      margin: 0px;
+    }
+
+    p {
+      color: $text-gray;
+    }
+  }
+
+  &.dat-form-card {
+    padding: 30px;
+
+    @media screen and (max-width: 400px) {
+      padding: 15px;
+    }
+  }
+
+  .form-info {
+    padding-top: 10px;
+    font-size: 10.5px;
+  }
+}
+
+.dat-action-card {
+  @include box-shadow(0 4px 10px rgba(37, 53, 76, 0.06));
+
+  &:hover,
+  &:focus {
+    @include box-shadow(0 2px 5px rgba(37, 53, 76, 0.06));
+  }
+}
+
+.form-wrapper {
+  position: relative;
+
+  .dat-loading-bar {
+    position: absolute;
+    top: -4px;
+  }
+}
+
+.dat-card {
+  position: relative;
+
+  .dat-loading-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+}
